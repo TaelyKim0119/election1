@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소개 | 2026 지방선거 여론 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        .nav {
+            background: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #1565C0; }
+
+        .hero {
+            background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+            color: #fff;
+            padding: 80px 30px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .data-source {
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .data-source h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .source-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .source-item:last-child {
+            border-bottom: none;
+        }
+
+        .source-badge {
+            background: #1565C0;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .source-badge.ai {
+            background: #7C3AED;
+        }
+
+        .source-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+
+        .source-content p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .methodology {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecef 100%);
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .methodology h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .methodology ul {
+            padding-left: 20px;
+        }
+
+        .methodology li {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 60px 30px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .cta h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1565C0, #0D47A1);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21, 101, 192, 0.4);
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 30px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer a:hover { color: #fff; }
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">2026 지방선거 여론 분석</a>
+        <div class="nav-links">
+            <a href="index.html">대시보드</a>
+            <a href="about.html">소개</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>데이터로 보는 지방선거</h1>
+        <p>한국갤럽 정기조사와 AI 트렌드 분석을 결합하여 2026년 지방선거 민심을 입체적으로 분석합니다.</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title">서비스 특징</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>실시간 데이터 시각화</h3>
+                    <p>16개 광역시·도의 단체장 지지율을 인터랙티브 차트와 지도로 한눈에 파악할 수 있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI 트렌드 분석</h3>
+                    <p>최신 검색 트렌드와 뉴스를 AI가 분석하여 각 단체장별 이슈와 전망을 제공합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>변화 추이 비교</h3>
+                    <p>상반기와 하반기 데이터를 비교하여 지지율 변화 흐름을 분석합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>세부 분석</h3>
+                    <p>연령대별, 정치성향별 지지율을 세분화하여 심층적인 인사이트를 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">데이터 출처</h2>
+            <div class="data-source">
+                <div class="source-item">
+                    <span class="source-badge">갤럽</span>
+                    <div class="source-content">
+                        <h4>한국갤럽조사연구소</h4>
+                        <p>2025년 상반기(1~6월) 및 하반기(7~12월) 광역단체장 직무수행 평가 정기조사 데이터를 활용합니다. 전국 성인 남녀를 대상으로 한 무작위 전화조사(RDD) 방식으로 수집된 데이터입니다.</p>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-badge ai">AI</span>
+                    <div class="source-content">
+                        <h4>AI 트렌드 분석</h4>
+                        <p>2026년 1~2월 기준 각 광역단체장 관련 뉴스, 검색 트렌드, 여론조사 결과를 AI가 종합 분석하여 최신 이슈와 재선 전망을 도출합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">분석 방법론</h2>
+            <div class="methodology">
+                <h3>Net Score 산출</h3>
+                <ul>
+                    <li><strong>Net Score = 긍정률 - 부정률</strong>: 단체장에 대한 순수 지지도를 나타냅니다.</li>
+                    <li><strong>양수(+)</strong>: 긍정 평가가 부정 평가보다 높음 (긍정 우세)</li>
+                    <li><strong>음수(-)</strong>: 부정 평가가 긍정 평가보다 높음 (위험 신호)</li>
+                    <li><strong>0 근처</strong>: 긍정과 부정이 팽팽하여 주의가 필요한 상태</li>
+                </ul>
+
+                <h3 style="margin-top:30px;">위험도 판정 기준</h3>
+                <ul>
+                    <li><strong style="color:#DC2626;">위험 (Net Score < 0)</strong>: 부정 평가 우세, 재선에 적신호</li>
+                    <li><strong style="color:#FF9800;">주의 (0 ≤ Net Score < 10)</strong>: 팽팽한 상황, 민심 관리 필요</li>
+                    <li><strong style="color:#4CAF50;">안정 (Net Score ≥ 10)</strong>: 긍정 평가 우세, 비교적 안정적</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="cta">
+                <h3>지금 바로 분석 결과를 확인하세요</h3>
+                <p>16개 광역시·도 단체장의 지지율과 최신 이슈를 한눈에 파악할 수 있습니다.</p>
+                <a href="index.html" class="cta-btn">대시보드 바로가기</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">대시보드</a>
+            <a href="about.html">소개</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
+        </div>
+        <p>&copy; 2026 지방선거 여론 분석. All rights reserved.</p>
+        <p style="margin-top:10px;">데이터 출처: 한국갤럽조사연구소 | AI 분석 기반 인사이트</p>
+    </footer>
+</body>
+</html>

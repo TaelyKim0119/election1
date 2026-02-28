@@ -794,12 +794,58 @@
             line-height: 1.6;
         }
 
+        /* Navigation */
+        .nav {
+            background: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--dem-color); }
+
         /* Footer */
         .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 30px;
             text-align: center;
-            padding: 30px;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer a:hover { color: #fff; }
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        .footer-info {
+            margin-top: 15px;
             font-size: 12px;
-            color: var(--text-light);
+            color: #666;
         }
 
         /* 변화 뱃지 - 상승 빨강, 하락 파랑 파스텔 */
@@ -1037,6 +1083,16 @@
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">2026 지방선거 여론 분석</a>
+        <div class="nav-links">
+            <a href="index.html">대시보드</a>
+            <a href="about.html">소개</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Header -->
         <header class="header">
@@ -1102,10 +1158,18 @@
         </div>
 
         <!-- Footer -->
-        <footer class="footer">
-            <p>본 자료는 한국갤럽조사연구소의 2025년 상반기(1~6월) 및 하반기(7~12월) 조사 결과를 기반으로 제작되었습니다.</p>
-        </footer>
     </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">대시보드</a>
+            <a href="about.html">소개</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
+        </div>
+        <p>&copy; 2026 지방선거 여론 분석. All rights reserved.</p>
+        <p class="footer-info">데이터 출처: 한국갤럽조사연구소 | AI 분석: 2026년 1~2월 검색 트렌드 기반</p>
+    </footer>
 
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay">
