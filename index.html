@@ -641,8 +641,9 @@
             gap: 16px;
             margin-bottom: 16px;
             padding: 14px 18px;
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            background: #ffffff;
             border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .modal-governor-photo {
@@ -655,11 +656,12 @@
         }
 
         .modal-region-logo {
-            height: 160px;
+            height: 320px;
             width: auto;
-            max-width: 200px;
+            max-width: 400px;
             object-fit: contain;
             flex-shrink: 0;
+            margin-left: auto;
         }
 
         .modal-governor-info {
@@ -2062,12 +2064,12 @@
             modalBody.innerHTML = `
                 <div class="modal-governor-section">
                     <img class="modal-governor-photo" src="${governorPhoto}" alt="${region.governor}">
-                    <img class="modal-region-logo" src="${regionLogo}" alt="${region.name}" onerror="this.style.display='none'">
                     <div class="modal-governor-info">
                         <div class="modal-governor-region">${region.name}</div>
                         <div class="modal-governor-name">${region.governor}</div>
                         <span class="modal-governor-party ${region.party}">${region.party === 'ppp' ? '국민의힘' : '더불어민주당'}</span>
                     </div>
+                    <img class="modal-region-logo" src="${regionLogo}" alt="${region.name}" onerror="this.style.display='none'">
                 </div>
 
                 ${changeSummaryHtml}
