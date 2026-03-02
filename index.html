@@ -654,6 +654,14 @@
             border-radius: 10px;
         }
 
+        .modal-region-logo {
+            height: 160px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
         .modal-governor-info {
             display: flex;
             flex-direction: column;
@@ -2049,9 +2057,12 @@
                 `;
             }
 
+            const regionLogo = regionLogoMap[region.id] || '';
+
             modalBody.innerHTML = `
                 <div class="modal-governor-section">
                     <img class="modal-governor-photo" src="${governorPhoto}" alt="${region.governor}">
+                    <img class="modal-region-logo" src="${regionLogo}" alt="${region.name}" onerror="this.style.display='none'">
                     <div class="modal-governor-info">
                         <div class="modal-governor-region">${region.name}</div>
                         <div class="modal-governor-name">${region.governor}</div>
