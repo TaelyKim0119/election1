@@ -33,7 +33,7 @@
     <!-- 네이버 웹마스터 도구 (사이트 등록 후 발급받은 코드로 교체 필요) -->
     <meta name="naver-site-verification" content="네이버에서_발급받은_인증코드">
 
-    <!-- 구조화된 데이터 (JSON-LD) -->
+    <!-- 구조화된 데이터 (JSON-LD) - GEO 최적화 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -50,20 +50,124 @@
         }
     }
     </script>
+
+    <!-- Article 스키마 - AI 검색 최적화 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "2026 지방선거 여론 분석 - 16개 시도 광역단체장 지지율",
+        "description": "2026년 6월 지방선거를 앞두고 전국 16개 시도 광역단체장의 직무수행 평가를 분석합니다. 한국갤럽 정기조사 데이터와 AI 트렌드 분석을 결합한 민심 대시보드입니다.",
+        "image": "https://taelykim0119.github.io/election1/logo.svg",
+        "author": {
+            "@type": "Organization",
+            "name": "2026 지방선거 여론 분석"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "2026 지방선거 여론 분석",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://taelykim0119.github.io/election1/logo.svg"
+            }
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-03-02",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://taelykim0119.github.io/election1/"
+        }
+    }
+    </script>
+
+    <!-- Dataset 스키마 -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Dataset",
         "name": "2026 지방선거 여론조사 데이터",
-        "description": "한국갤럽 정기조사 기반 16개 광역시도 단체장 직무수행 평가 데이터",
+        "description": "한국갤럽 정기조사 기반 16개 광역시도 단체장 직무수행 평가 데이터. 2025년 상반기/하반기 조사 결과와 2026년 1~2월 AI 트렌드 분석을 포함합니다.",
         "url": "https://taelykim0119.github.io/election1/",
-        "keywords": ["지방선거", "여론조사", "한국갤럽", "시도지사", "지지율"],
+        "keywords": ["지방선거", "여론조사", "한국갤럽", "시도지사", "지지율", "2026 선거", "광역단체장"],
         "creator": {
             "@type": "Organization",
             "name": "한국갤럽조사연구소"
         },
-        "temporalCoverage": "2025/2026",
-        "spatialCoverage": "대한민국"
+        "temporalCoverage": "2025-01/2026-03",
+        "spatialCoverage": "대한민국",
+        "license": "https://creativecommons.org/licenses/by-nc/4.0/"
+    }
+    </script>
+
+    <!-- FAQPage 스키마 - AI 검색 인용 최적화 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "2026 지방선거는 언제 치러지나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026 지방선거는 2026년 6월 3일(수요일)에 치러질 예정입니다. 이번 선거에서는 17개 광역시도지사, 226개 기초단체장, 광역의원 789명, 기초의원 2,988명 등 총 4,000여 명의 지방자치단체 대표를 선출합니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Net Score란 무엇인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Net Score는 긍정 평가율에서 부정 평가율을 뺀 값입니다. 예를 들어 긍정 50%, 부정 30%라면 Net Score는 +20입니다. 0 이상이면 긍정 우세, 0 미만이면 부정 우세를 의미합니다. 이 지표는 단체장의 직무수행에 대한 전반적인 민심을 한눈에 파악할 수 있게 해줍니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "현재 가장 높은 지지율을 받는 시도지사는 누구인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2025년 하반기 한국갤럽 조사 기준, 전라남도 김영록 지사가 Net Score +26으로 가장 높은 평가를 받고 있습니다. 이어서 경기도 김동연 지사(+25), 울산 김두겸 시장(+18) 순입니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "현재 재선이 위험한 시도지사는 누구인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2025년 하반기 기준 Net Score가 마이너스인 단체장은 6명입니다. 광주 강기정 시장(-33), 충북 김영환 지사(-16), 대전 이장우 시장(-12), 서울 오세훈 시장(-11), 제주 오영훈 지사(-10), 부산 박형준 시장(-7) 순으로 부정 평가가 우세합니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "이 사이트의 데이터 출처는 어디인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "본 사이트는 한국갤럽조사연구소의 2025년 상반기(1~6월) 및 하반기(7~12월) 정기조사 데이터를 기반으로 합니다. 추가로 2026년 1~2월 검색 트렌드와 뉴스 분석을 통한 AI 인사이트를 제공합니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "국민의힘과 더불어민주당 소속 시도지사는 각각 몇 명인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "현재 국민의힘 소속 광역단체장은 10명(서울, 부산, 인천, 울산, 대전, 강원, 충북, 충남, 경북, 경남, 세종)이고, 더불어민주당 소속은 6명(경기, 광주, 전북, 전남, 제주)입니다. 대구는 2025년 4월 홍준표 전 시장 사퇴로 현재 공석입니다."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Speakable 스키마 - AI 음성 검색 최적화 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "2026 지방선거 여론 분석",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".header h1", ".header .subtitle", ".summary-row", ".section-title"]
+        },
+        "url": "https://taelykim0119.github.io/election1/"
     }
     </script>
 
@@ -891,6 +995,54 @@
         }
         .nav-links a:hover { color: var(--dem-color); }
 
+        /* FAQ Section - GEO 최적화 */
+        .faq-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-top: 40px;
+        }
+        .faq-update {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+        .faq-item:hover {
+            background: #f0f0f0;
+        }
+        .faq-question {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .faq-question::before {
+            content: "Q. ";
+            color: var(--dem-color);
+        }
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+        .faq-answer strong {
+            color: var(--text-dark);
+        }
+
         /* Footer */
         .footer {
             background: #1a1a1a;
@@ -1222,6 +1374,50 @@
             <h2 class="section-title">Net Score 순위</h2>
             <div class="rankings-grid" id="rankingsGrid"></div>
         </div>
+
+        <!-- FAQ 섹션 - GEO 최적화 -->
+        <section class="faq-section" id="faq">
+            <h2 class="section-title">자주 묻는 질문 (FAQ)</h2>
+            <p class="faq-update">최종 업데이트: 2026년 3월 2일</p>
+            <div class="faq-list">
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">2026 지방선거는 언제 치러지나요?</h3>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text"><strong>2026 지방선거는 2026년 6월 3일(수요일)</strong>에 치러질 예정입니다. 이번 선거에서는 17개 광역시도지사, 226개 기초단체장, 광역의원 789명, 기초의원 2,988명 등 총 4,000여 명의 지방자치단체 대표를 선출합니다.</p>
+                    </div>
+                </article>
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">Net Score란 무엇인가요?</h3>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text"><strong>Net Score는 긍정 평가율에서 부정 평가율을 뺀 값</strong>입니다. 예를 들어 긍정 50%, 부정 30%라면 Net Score는 +20입니다. 0 이상이면 긍정 우세, 0 미만이면 부정 우세를 의미합니다. 이 지표는 단체장의 직무수행에 대한 전반적인 민심을 한눈에 파악할 수 있게 해줍니다.</p>
+                    </div>
+                </article>
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">현재 가장 높은 지지율을 받는 시도지사는 누구인가요?</h3>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">2025년 하반기 한국갤럽 조사 기준, <strong>전라남도 김영록 지사가 Net Score +26으로 가장 높은 평가</strong>를 받고 있습니다. 이어서 경기도 김동연 지사(+25), 울산 김두겸 시장(+18) 순입니다.</p>
+                    </div>
+                </article>
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">현재 재선이 위험한 시도지사는 누구인가요?</h3>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">2025년 하반기 기준 <strong>Net Score가 마이너스인 단체장은 6명</strong>입니다. 광주 강기정 시장(-33), 충북 김영환 지사(-16), 대전 이장우 시장(-12), 서울 오세훈 시장(-11), 제주 오영훈 지사(-10), 부산 박형준 시장(-7) 순으로 부정 평가가 우세합니다.</p>
+                    </div>
+                </article>
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">이 사이트의 데이터 출처는 어디인가요?</h3>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">본 사이트는 <strong>한국갤럽조사연구소의 2025년 상반기(1~6월) 및 하반기(7~12월) 정기조사 데이터</strong>를 기반으로 합니다. 추가로 2026년 1~2월 검색 트렌드와 뉴스 분석을 통한 AI 인사이트를 제공합니다.</p>
+                    </div>
+                </article>
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">국민의힘과 더불어민주당 소속 시도지사는 각각 몇 명인가요?</h3>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">현재 <strong>국민의힘 소속 광역단체장은 10명</strong>(서울, 부산, 인천, 울산, 대전, 강원, 충북, 충남, 경북, 경남, 세종)이고, <strong>더불어민주당 소속은 6명</strong>(경기, 광주, 전북, 전남, 제주)입니다. 대구는 2025년 4월 홍준표 전 시장 사퇴로 현재 공석입니다.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
         <!-- Footer -->
     </div>
