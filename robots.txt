@@ -1,0 +1,11 @@
+# robots.txt for 2026 지방선거 여론 분석
+# https://taelykim0119.github.io/election1/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://taelykim0119.github.io/election1/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
